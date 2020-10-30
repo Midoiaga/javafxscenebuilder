@@ -1,7 +1,8 @@
 package ehu.isad;
 
+import ehu.isad.controller.ui.ErroreKud;
 import ehu.isad.controller.ui.NagusiaKud;
-import ehu.isad.controller.ui.EzarpenakKud;
+import ehu.isad.controller.ui.HerrialdeakKud;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,12 +14,15 @@ import java.io.IOException;
 public class Main extends Application {
 
   private Parent nagusiaUI;
-  private Parent ezarpenakUI;
+  private Parent herrialdeakUI;
+  private Parent erroreUI;
+
 
   private Stage stage;
 
   private NagusiaKud nagusiaKud;
-  private EzarpenakKud ezarpenakKud;
+  private HerrialdeakKud herrialdeakKud;
+  private ErroreKud erroreKud;
 
 
   @Override
@@ -27,22 +31,27 @@ public class Main extends Application {
     stage = primaryStage;
     pantailakKargatu();
 
-    stage.setTitle("Ezarpenak lortu");
+    stage.setTitle("Eurobisioa");
     stage.setScene(new Scene(nagusiaUI, 450, 275));
     stage.show();
   }
 
   private void pantailakKargatu() throws IOException {
 
-    FXMLLoader loaderKautotu = new FXMLLoader(getClass().getResource("/NagusiaUI.fxml"));
-    nagusiaUI = (Parent) loaderKautotu.load();
-    nagusiaKud = loaderKautotu.getController();
+    FXMLLoader loaderNagusia = new FXMLLoader(getClass().getResource("/NagusiaUI.fxml"));
+    nagusiaUI = (Parent) loaderNagusia.load();
+    nagusiaKud = loaderNagusia.getController();
     nagusiaKud.setMainApp(this);
 
-    FXMLLoader loaderMain = new FXMLLoader(getClass().getResource("/EzarpenakUI.fxml"));
-    ezarpenakUI = (Parent) loaderMain.load();
-    ezarpenakKud = loaderMain.getController();
-    ezarpenakKud.setMainApp(this);
+    FXMLLoader loaderHerrialdeak = new FXMLLoader(getClass().getResource("/Herrialdeak.fxml"));
+    herrialdeakUI = (Parent) loaderHerrialdeak.load();
+    herrialdeakKud = loaderHerrialdeak.getController();
+    herrialdeakKud.setMainApp(this);
+
+    FXMLLoader loaderErrorea = new FXMLLoader(getClass().getResource("/Errorea.fxml"));
+    erroreUI = (Parent) loaderErrorea.load();
+    erroreKud = loaderErrorea.getController();
+    erroreKud.setMainApp(this);
   }
 
 
@@ -50,9 +59,15 @@ public class Main extends Application {
     launch(args);
   }
 
-  public void ezarpenakErakutsi() {
-    stage.setScene(new Scene(ezarpenakUI));
+  public void herrialdeakErakutsi() {
+    stage.setScene(new Scene(herrialdeakUI));
     stage.show();
-    ezarpenakKud.getEzarpenak();
+
+  }
+  public void erroreErakutsi(String pHerrialde) {
+    stage.setScene(new Scene(erroreUI));
+    stage.show();
+    erroreKud.setLabel(pHerrialde);
+
   }
 }
