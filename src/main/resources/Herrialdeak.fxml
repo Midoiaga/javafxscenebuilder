@@ -6,12 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.HerrialdeakKud">
    <children>
       <Button fx:id="okBotoia" layoutX="274.0" layoutY="317.0" mnemonicParsing="false" onAction="#onOK" text="OK" />
       <ComboBox fx:id="combozerbitzua" layoutX="216.0" layoutY="216.0" prefWidth="150.0" />
-      <Label layoutX="118.0" layoutY="134.0" text="Aukeratu zein herrialdeak egin nahi duez bozkaketa">
+      <Label layoutX="118.0" layoutY="134.0" text="Aukeratu zein herrialdeak egin nahi duen bozkaketa">
          <font>
             <Font size="17.0" />
          </font>
