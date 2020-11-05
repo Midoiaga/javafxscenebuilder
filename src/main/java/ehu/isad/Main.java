@@ -1,8 +1,6 @@
 package ehu.isad;
 
-import ehu.isad.controller.ui.ErroreKud;
-import ehu.isad.controller.ui.NagusiaKud;
-import ehu.isad.controller.ui.HerrialdeakKud;
+import ehu.isad.controller.ui.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +14,8 @@ public class Main extends Application {
   private Parent nagusiaUI;
   private Parent herrialdeakUI;
   private Parent erroreUI;
+  private Parent bozkaketakUI;
+  private Parent TOP3UI;
 
 
   private Stage stage;
@@ -23,6 +23,8 @@ public class Main extends Application {
   private NagusiaKud nagusiaKud;
   private HerrialdeakKud herrialdeakKud;
   private ErroreKud erroreKud;
+  private BozkaketakKud bozkaketakKud;
+  private TOP3Kud TOP3Kud;
 
 
   @Override
@@ -32,16 +34,32 @@ public class Main extends Application {
     pantailakKargatu();
 
     stage.setTitle("Eurobisioa");
-    stage.setScene(new Scene(nagusiaUI, 450, 275));
+    stage.setScene(new Scene(nagusiaUI));
     stage.show();
   }
 
+
+//  private Parent kargatu(String pFxml,Kudeatzaile pKud) throws IOException {
+//
+//    FXMLLoader loaderNagusia = new FXMLLoader(getClass().getResource("/"+pFxml+".fxml"));
+//    Parent pUi = (Parent) loaderNagusia.load();
+//    pKud = loaderNagusia.getController();
+//    pKud.setMainApp(this);
+//
+//    return pUi;
+//  }
   private void pantailakKargatu() throws IOException {
 
+//    nagusiaUI=kargatu("NagusiaUI",nagusiaKud);
+//    herrialdeakUI=kargatu("Herrialdeak",herrialdeakKud);
+//    erroreUI=kargatu("Errorea",erroreKud);
+//    bozkaketakUI=kargatu("Bozkaketak",bozkaketakKud);
+//    TOP3UI=kargatu("TOP3",this.TOP3Kud);
     FXMLLoader loaderNagusia = new FXMLLoader(getClass().getResource("/NagusiaUI.fxml"));
     nagusiaUI = (Parent) loaderNagusia.load();
     nagusiaKud = loaderNagusia.getController();
     nagusiaKud.setMainApp(this);
+
 
     FXMLLoader loaderHerrialdeak = new FXMLLoader(getClass().getResource("/Herrialdeak.fxml"));
     herrialdeakUI = (Parent) loaderHerrialdeak.load();
@@ -52,6 +70,16 @@ public class Main extends Application {
     erroreUI = (Parent) loaderErrorea.load();
     erroreKud = loaderErrorea.getController();
     erroreKud.setMainApp(this);
+
+    FXMLLoader loaderBozkaketak = new FXMLLoader(getClass().getResource("/Bozkaketak.fxml"));
+    bozkaketakUI = (Parent) loaderBozkaketak.load();
+    bozkaketakKud = loaderBozkaketak.getController();
+    bozkaketakKud.setMainApp(this);
+
+    FXMLLoader loaderTOP3 = new FXMLLoader(getClass().getResource("/TOP3.fxml"));
+    TOP3UI = (Parent) loaderTOP3.load();
+    TOP3Kud = loaderTOP3.getController();
+    TOP3Kud.setMainApp(this);
   }
 
 

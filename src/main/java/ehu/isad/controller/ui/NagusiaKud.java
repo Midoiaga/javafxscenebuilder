@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NagusiaKud implements Initializable {
+public class NagusiaKud implements Kudeatzaile {
 
   // Reference to the main application.
   private Main mainApp;

@@ -5,28 +5,43 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ErroreKud implements Kudeatzaile{
+public class TOP3Kud implements Kudeatzaile{
+
     private Main mainapp;
-    @FXML
-    private Button okBotoia;
 
     @FXML
-    private Label testuaLbl;
+    private Label lbTOP1;
 
+    @FXML
+    private Label lbTOP2;
+
+    @FXML
+    private Label lbTOP3;
+
+    @FXML
+    private Button btnOK;
+
+    @FXML
+    private ImageView imgTOP1;
+
+    @FXML
+    private ImageView imgTOP2;
+
+    @FXML
+    private ImageView imgTOP3;
 
     public void setMainApp(Main mainapp){
         this.mainapp=mainapp;
     }
-    public void setLabel(String pHerrialde){
-        testuaLbl.setText(pHerrialde+" jada banatu ditu bere puntuak");
-    }
+
     @FXML
     void onOK(ActionEvent event) {
-        System.exit(0);
+
     }
 
     @Override

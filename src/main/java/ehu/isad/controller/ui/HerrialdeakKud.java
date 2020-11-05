@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class HerrialdeakKud implements Initializable {
+public class HerrialdeakKud implements Kudeatzaile {
   private Main mainapp;
 
   @FXML
@@ -27,11 +27,10 @@ public class HerrialdeakKud implements Initializable {
 
   @FXML
   void onOK(ActionEvent event) {
-    String bandera= BozkaketaDBKud.getInstantzia().lortuBozkatua(combozerbitzua.getValue());
-    if (bandera!=""){
+    String bandera = BozkaketaDBKud.getInstantzia().lortuBozkatua(combozerbitzua.getValue());
+    if (bandera != "") {
       mainapp.erroreErakutsi(combozerbitzua.getValue());
-    }
-    else{
+    } else {
       System.exit(0);
     }
   }
@@ -46,5 +45,6 @@ public class HerrialdeakKud implements Initializable {
     ObservableList<String> herrialdeak = FXCollections.observableArrayList(herrrialdeList);
 
     combozerbitzua.setItems( herrialdeak );
+    combozerbitzua.getSelectionModel().selectFirst();
   }
 }
