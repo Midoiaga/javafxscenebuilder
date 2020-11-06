@@ -32,15 +32,16 @@ public class OrdezkapenDBKud {
         try {
             while (rs.next()) {
 
-                String artista = rs.getString("o.artista");
-                String herrialdea = rs.getString("o.herrialdea");
-                String abestia = rs.getString("o.abestia");
-                String argazkia = rs.getString("o.bandera");
+                String artista = rs.getString("artista");
+                String herrialdea = rs.getString("herrialdea");
+                String abestia = rs.getString("abestia");
+                String argazkia = rs.getString("bandera");
 
                 OrdezkapenModel ordez = new OrdezkapenModel(herrialdea,abestia,artista,"irudiak/"+argazkia+".png");
                 emaitza.add(ordez);
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             System.err.println(e);
         }
         return emaitza;

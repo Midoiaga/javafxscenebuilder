@@ -31,7 +31,7 @@ public class HerrialdeakKud implements Kudeatzaile {
     if (bandera != "") {
       mainapp.erroreErakutsi(combozerbitzua.getValue());
     } else {
-      System.exit(0);
+      this.mainapp.bozkaketakErakutsi(combozerbitzua.getValue());
     }
   }
 

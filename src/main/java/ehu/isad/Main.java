@@ -98,4 +98,10 @@ public class Main extends Application {
     erroreKud.setLabel(pHerrialde);
 
   }
+  public void bozkaketakErakutsi(String pHerrialde) {
+    stage.setScene(new Scene(bozkaketakUI));
+    stage.show();
+
+
+  }
 }
