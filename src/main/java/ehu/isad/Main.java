@@ -101,7 +101,15 @@ public class Main extends Application {
   public void bozkaketakErakutsi(String pHerrialde) {
     stage.setScene(new Scene(bozkaketakUI));
     stage.show();
+    bozkaketakKud.setLbBozkatzaile(pHerrialde);
+    bozkaketakKud.setHerrialde(pHerrialde);
 
+
+  }
+  public void top3Erakutsi(){
+    stage.setScene(new Scene(this.TOP3UI));
+    stage.show();
+    this.TOP3Kud.denaKargatuU();
 
   }
 }

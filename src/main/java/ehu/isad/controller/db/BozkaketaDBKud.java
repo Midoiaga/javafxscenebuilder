@@ -38,4 +38,14 @@ public class BozkaketaDBKud {
 
             return emaitza;
         }
+
+
+        public void bozkaketaSartu(int  pPuntuak,String pBozkatzailea,String pBozkatua){
+
+            DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
+
+            String query = "insert into Bozkaketa (bozkatuaIzanDa, bozkatuDU, urtea, puntuak) values ('"+pBozkatua+"','"+pBozkatzailea+"',2019,"+pPuntuak+")";
+            dbkud.execSQL(query);
+
+        }
     }

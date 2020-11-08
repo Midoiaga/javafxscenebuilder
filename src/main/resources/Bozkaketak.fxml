@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.BozkaketakKud">
    <children>
@@ -20,7 +21,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label fx:id="lbBozkatzaile" layoutX="114.0" layoutY="27.0" prefHeight="48.0" prefWidth="122.0" text="Label" />
+      <Label fx:id="lbBozkatzaile" layoutX="113.0" layoutY="21.0" prefHeight="63.0" prefWidth="321.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <Button fx:id="btnGorde" layoutX="247.0" layoutY="355.0" mnemonicParsing="false" onAction="#onGorde" text="Bozkaketa Gorde" />
    </children>
 </AnchorPane>

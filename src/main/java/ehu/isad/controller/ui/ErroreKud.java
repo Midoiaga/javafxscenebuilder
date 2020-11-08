@@ -22,7 +22,7 @@ public class ErroreKud implements Kudeatzaile{
         this.mainapp=mainapp;
     }
     public void setLabel(String pHerrialde){
-        testuaLbl.setText(pHerrialde+" jada banatu ditu bere puntuak");
+        testuaLbl.setText(pHerrialde+"k jada banatu ditu bere puntuak");
     }
     @FXML
     void onOK(ActionEvent event) {
