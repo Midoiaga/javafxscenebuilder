@@ -79,7 +79,7 @@ public class BozkaketakKud implements Kudeatzaile {
 
         int i = 0;
         int puntuak = 0;
-        while (i < tbBotoak.getItems().size() && puntuak != 5) {
+        while (i < tbBotoak.getItems().size() && puntuak < 5) {
             puntuak = puntuak + tbBotoak.getItems().get(i).getPuntuak();
             i++;
         }
